@@ -12,20 +12,20 @@ namespace KatanaIntro
     using System.Web.Http;
     using AppFunc = Func<IDictionary<string, object>, Task>;
 
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            string uri = "http://localhost:8080/";
+    //class Program
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        string uri = "http://localhost:8080/";
 
-            using (WebApp.Start<Startup>(uri))
-            {
-                Console.WriteLine("Started!");
-                Console.ReadKey();
-                Console.WriteLine("Stopped!!");
-            }
-        }
-    }
+    //        using (WebApp.Start<Startup>(uri))
+    //        {
+    //            Console.WriteLine("Started!");
+    //            Console.ReadKey();
+    //            Console.WriteLine("Stopped!!");
+    //        }
+    //    }
+    //}
 
     public class Startup
     {

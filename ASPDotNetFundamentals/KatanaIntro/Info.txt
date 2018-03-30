@@ -1,0 +1,28 @@
+﻿Download Microsoft.Owin.Host.SystemWeb NuGet package (for hosting in IIS)
+
+
+Don't forget to rename App.config to Web.config
+
+
+There are three ways to specify our Startup class for Owin.Host.SystemWeb to pick it up and send to IIS
+------------------------------------------------ONE---------------------------------------------------------
+<appSettings>
+	<add key="owin:appStartup" value="KatanaIntro.Startup"/>
+</appSettings>
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------TWO---------------------------------------------------------
+[assembly: OwinStartup(typeof(KatanaIntro.Startup))]
+------------------------------------------------------------------------------------------------------------
+-----------------------------------------------THREEE-------------------------------------------------------
+// Using reflection
+namespace KatanaIntro
+{
+	public class Startup
+	{
+		// ...
+	}
+}
+------------------------------------------------------------------------------------------------------------
+
+Command to run this application in IIS:
+ > "C:\Program Files\IIS Express\iisexpress.exe" /path:C:\Users\kabyab974\source\repos\ASP.NET-MVC-5-Fundamentals\ASPDotNetFundamentals\KatanaIntro
